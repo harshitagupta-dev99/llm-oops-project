@@ -19,4 +19,19 @@ export class LibraryService{
         return this.#books;
     }
 
+    getSelectedBook(bookId){
+         return this.#books.find((book)=>{
+            return book.id === bookId;
+        })
+    }
+
+    getBorrowedBooks(){
+        return this.#books.filter((book)=>{
+            return !book.isAvailable;
+        })
+    }
+
+   
+
+
 }
